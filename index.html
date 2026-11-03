@@ -2134,7 +2134,6 @@ function frame(now){
   render(now);
   requestAnimationFrame(frame);
 }
-if(location.hash==='#test'){window.__G={S:()=>S,K:()=>K,setSpeed:v=>{speed=v},begin:()=>{if(!started){newRun();begin()}},step:(n)=>{for(let i=0;i<n;i++)if(S.phase!=='dawn'&&modal==null)update(STEP)},modal:()=>modal,startNextDay,eat,fight:()=>{const h=S.hero;if(h.act&&h.act.kind==='attack'&&!h.act.e.dead)return;let best=null,bd=1e9;for(const z of S.bots){if(RK[z.k].fly&&weapon().w.melee)continue;const d=distServer(z.x,z.y)*2+Math.hypot(z.x-h.x,z.y-h.y);if(d<bd){bd=d;best=z}}if(best)cmdAttack(best,false)}}}
 const saved=store.get(RKEY);
 if(saved){try{loadRun(saved)}catch(e){S=null}}
 if(!S){S=baseState(1234);genWorld(1234);drawFloor();flow()}
